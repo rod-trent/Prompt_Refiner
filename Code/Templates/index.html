@@ -1,0 +1,56 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Refiner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .refined-prompt {
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generative AI Prompt Refiner</h1>
+        <form method="post">
+            <label for="prompt">Enter your prompt:</label><br>
+            <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Refine Prompt">
+        </form>
+        {% if original_prompt %}
+            <h2>Original Prompt:</h2>
+            <p>{{ original_prompt }}</p>
+            <h2>Refined Prompt:</h2>
+            <div class="refined-prompt">
+                <p>{{ refined_prompt }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
