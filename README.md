@@ -14,6 +14,12 @@ Place the main app in the main directory, the HTMl template into a \templates su
 
 ![Directory Structure](https://github.com/rod-trent/GenAI_Prompt_Refiner/blob/main/Images/filestructure.jpg)
 
+To increase or decrease the number of prompts in the response, adjust the max_tokens in the main app and to keep the response focused on just suggested prompts instead of a lot of additional, extraneous information, the 0.4 temperature tends to work well.
+
+```python
+"max_tokens": 500,
+"temperature": 0.4,
+```
 
 ## Requirements
 Required packages:
