@@ -1,25 +1,10 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt Refiner</title>
+    <title>Generative AI Prompt Refiner</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-
         .container {
             width: 100%;
             max-width: 800px;
@@ -32,12 +17,13 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f9f9f9;
+            word-wrap: break-word; /* Ensure long words break to fit within the container */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Generative AI Prompt Refiner</h1>
+        <h1>Generative AI Prompt Refiner and Idea Creator</h1>
         <form method="post">
             <label for="prompt">Enter your prompt:</label><br>
             <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
@@ -47,10 +33,25 @@
             <h2>Original Prompt:</h2>
             <p>{{ original_prompt }}</p>
             <h2>Refined Prompt:</h2>
-            <div class="refined-prompt">
-                <p>{{ refined_prompt }}</p>
+            <div class="refined-prompt" id="refined-prompt">
+                <!-- The refined prompt will be inserted here by JavaScript -->
             </div>
         {% endif %}
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const refinedPrompt = `{{ refined_prompt | safe }}`;
+            const refinedPromptContainer = document.getElementById('refined-prompt');
+            
+            if (refinedPrompt) {
+                const sentences = refinedPrompt.match(/[^\.!\?]+[\.!\?]+/g);
+                sentences.forEach(sentence => {
+                    const p = document.createElement('p');
+                    p.textContent = sentence.trim();
+                    refinedPromptContainer.appendChild(p);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
