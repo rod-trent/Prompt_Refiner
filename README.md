@@ -1,5 +1,5 @@
 # Prompt Refiner and Idea Creator
-A web-based tool to create better prompts and supply ideas for more prompts.
+A web-based tool to create better prompts and supply ideas for additional prompts.
 
 Prompt Refiner, the ultimate app for enhancing your AI interactions. With a user-friendly form for input, Prompt Refiner invites you to submit your initial ideas or questions. Leveraging the advanced capabilities of OpenAI’s GPT-3, the app processes your input, refining it into a clear, concise, and optimized prompt. Experience the satisfaction of seeing your thoughts transformed as Prompt Refiner displays the polished prompt, ready for any AI-powered application. Elevate your AI experience with Prompt Refiner – where your input becomes inspiration.
 
