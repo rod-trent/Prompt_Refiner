@@ -27,3 +27,7 @@ python BestPrompt.py
 ```
 
 This will start a local web server. Open your web browser and navigate to http://127.0.0.1:5000/ to access the web app. You can enter a prompt, and the app will refine it using Azure OpenAI and display the refined prompt.
+
+![Prompt Refiner](https://github.com/rod-trent/GenAI_Prompt_Refiner/blob/main/Images/PromptRefiner.jpg)
+
+
