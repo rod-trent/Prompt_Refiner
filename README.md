@@ -11,4 +11,6 @@ Here is a step-by-step guide:
 
 First, install the required packages:
 
+```python
 pip install flask openai
+```
