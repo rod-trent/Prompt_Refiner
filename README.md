@@ -16,8 +16,17 @@ Required packages:
 pip install flask openai
 ```
 
+If you've not already, set up Azure OpenAI: Ensure you have an Azure subscription and have deployed the OpenAI service in Azure. Obtain the endpoint URL and API key from the Azure portal.
+
+Modify the BestPrompt.py script and replace the placeholders with your actual Azure OpenAI endpoint, API key, and deployment name.
+
+**Placeholders:** 
+* azure_openai_endpoint: The endpoint URL for your Azure OpenAI service.
+* azure_openai_api_key: The API key for your Azure OpenAI service.
+* deployment_name: The name of your deployment in Azure OpenAI.
+
 Run the application
 
 ```python
-python app.py
+python BestPrompt.py
 ```
