@@ -31,6 +31,8 @@ Modify the BestPrompt.py script and replace the placeholders with your actual Az
 * azure_openai_api_key: The API key for your Azure OpenAI service.
 * deployment_name: The name of your deployment in Azure OpenAI.
 
+# Application
+
 Run the application
 
 ```python
