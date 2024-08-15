@@ -1,13 +1,13 @@
-# BestPromptAAI.py
+# app.py
 from flask import Flask, render_template, request
 import requests
 
 app = Flask(__name__)
 
 # Set your Azure OpenAI endpoint and API key here
-azure_openai_endpoint = 'https://your-azure-openai-endpoint.openai.azure.com'
-azure_openai_api_key = 'your_azure_openai_api_key'
-deployment_name = 'your_deployment_name'  # The name of your deployment in Azure OpenAI
+azure_openai_endpoint = 'https://6mdmopenaiinstance.openai.azure.com/'
+azure_openai_api_key = '583d55fb53e04d718571b395e2e5d16a'
+deployment_name = '6MDMGPT35'  # The name of your deployment in Azure OpenAI
 
 def refine_prompt(prompt):
     headers = {
@@ -15,8 +15,8 @@ def refine_prompt(prompt):
         'api-key': azure_openai_api_key,
     }
     data = {
-        "prompt": f"Refine the following prompt to make it more effective for generating high-quality responses and supply new prompt samples:\n\n{prompt}",
-        "max_tokens": 200,
+        "prompt": f"Refine the following prompt to make it more effective for generating high-quality responses. Also include three additional different samples based on the original prompt as ideas for better prompts:\n\n{prompt}",
+        "max_tokens": 200,  # Increase the max_tokens to allow for a longer response
         "temperature": 0.1,
     }
     response = requests.post(f"{azure_openai_endpoint}/openai/deployments/{deployment_name}/completions?api-version=2022-12-01", headers=headers, json=data)
