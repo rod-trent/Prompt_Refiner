@@ -10,7 +10,7 @@ Code here: https://github.com/rod-trent/GenAI_Prompt_Refiner/tree/main/Code
 * Main app: https://github.com/rod-trent/GenAI_Prompt_Refiner/blob/main/Code/BestPrompt.py
 * HTML template: https://github.com/rod-trent/GenAI_Prompt_Refiner/tree/main/Code/Templates
 
-Place the main app in the main directory, the HTMl template into a \templates subdirectory.
+Place the main app in the main directory, the HTML template into a \templates subdirectory.
 
 ![Directory Structure](https://github.com/rod-trent/GenAI_Prompt_Refiner/blob/main/Images/filestructure.jpg)
 
