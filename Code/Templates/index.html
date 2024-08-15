@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generative AI Prompt Refiner</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
         .container {
             width: 100%;
             max-width: 800px;
@@ -24,10 +28,11 @@
 <body>
     <div class="container">
         <h1>Generative AI Prompt Refiner and Idea Creator</h1>
-        <form method="post">
+        <form method="post" id="prompt-form">
             <label for="prompt">Enter your prompt:</label><br>
             <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
             <input type="submit" value="Refine Prompt">
+            <button type="button" onclick="resetForm()">Clear and Start Over</button>
         </form>
         {% if original_prompt %}
             <h2>Original Prompt:</h2>
@@ -52,6 +57,11 @@
                 });
             }
         });
+
+        function resetForm() {
+            document.getElementById('prompt-form').reset();
+            document.getElementById('refined-prompt').innerHTML = '';
+        }
     </script>
 </body>
 </html>
