@@ -5,6 +5,9 @@ Prompt Refiner, the ultimate app for enhancing your AI interactions. With a user
 
 Code here: https://github.com/rod-trent/GenAI_Prompt_Refiner/tree/main/Code
 
+* Main app: https://github.com/rod-trent/GenAI_Prompt_Refiner/blob/main/Code/BestPrompt.py
+* HTML template: https://github.com/rod-trent/GenAI_Prompt_Refiner/tree/main/Code/Templates
+
 Required packages:
 
 ```python
