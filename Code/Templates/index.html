@@ -50,6 +50,22 @@
             background-color: #2c2c2c;
             word-wrap: break-word; /* Ensure long words break to fit within the container */
         }
+
+        .sentence-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .copy-button {
+            background-color: #444;
+            color: #e0e0e0;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -78,9 +94,24 @@
             if (refinedPrompt) {
                 const sentences = refinedPrompt.match(/[^\.!\?]+[\.!\?]+/g);
                 sentences.forEach(sentence => {
+                    const sentenceContainer = document.createElement('div');
+                    sentenceContainer.className = 'sentence-container';
+
                     const p = document.createElement('p');
                     p.textContent = sentence.trim();
-                    refinedPromptContainer.appendChild(p);
+
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'copy-button';
+                    copyButton.textContent = 'Copy';
+                    copyButton.addEventListener('click', function() {
+                        navigator.clipboard.writeText(sentence.trim()).then(() => {
+                            alert('Copied to clipboard');
+                        });
+                    });
+
+                    sentenceContainer.appendChild(p);
+                    sentenceContainer.appendChild(copyButton);
+                    refinedPromptContainer.appendChild(sentenceContainer);
                 });
             }
         });
