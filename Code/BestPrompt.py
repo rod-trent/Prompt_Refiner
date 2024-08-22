@@ -15,8 +15,8 @@ def refine_prompt(prompt):
         'api-key': azure_openai_api_key,
     }
     data = {
-        "prompt": f"Refine the following prompt to make it more effective for generating a high-quality response:\n\n{prompt}",
-        "max_tokens": 100,  # Increase the max_tokens to allow for a longer response
+        "prompt": f"Refine the following prompt to make it more effective for generating a high-quality response:\n\n{prompt}\n\nAdditionally, provide 3 optional prompts for other related ideas to prompt for.",
+        "max_tokens": 250,  # Increase the max_tokens to allow for a longer response
         "temperature": 0.2,
     }
     response = requests.post(f"{azure_openai_endpoint}/openai/deployments/{deployment_name}/completions?api-version=2022-12-01", headers=headers, json=data)
