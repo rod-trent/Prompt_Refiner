@@ -70,7 +70,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Generative AI Prompt Refiner (and Idea Creator)</h1>
+        <h1>Generative AI Prompt Refiner and Idea Creator</h1>
         <form method="post" id="prompt-form">
             <label for="prompt">Enter your prompt:</label><br>
             <textarea id="prompt" name="prompt" rows="4" cols="50"></textarea><br><br>
@@ -92,27 +92,24 @@
             const refinedPromptContainer = document.getElementById('refined-prompt');
             
             if (refinedPrompt) {
-                const sentences = refinedPrompt.match(/[^\.!\?]+[\.!\?]+/g);
-                sentences.forEach(sentence => {
-                    const sentenceContainer = document.createElement('div');
-                    sentenceContainer.className = 'sentence-container';
+                const paragraph = document.createElement('p');
+                paragraph.textContent = refinedPrompt.trim();
 
-                    const p = document.createElement('p');
-                    p.textContent = sentence.trim();
-
-                    const copyButton = document.createElement('button');
-                    copyButton.className = 'copy-button';
-                    copyButton.textContent = 'Copy';
-                    copyButton.addEventListener('click', function() {
-                        navigator.clipboard.writeText(sentence.trim()).then(() => {
-                            alert('Copied to clipboard');
-                        });
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-button';
+                copyButton.textContent = 'Copy';
+                copyButton.addEventListener('click', function() {
+                    navigator.clipboard.writeText(refinedPrompt.trim()).then(() => {
+                        alert('Copied to clipboard');
                     });
-
-                    sentenceContainer.appendChild(p);
-                    sentenceContainer.appendChild(copyButton);
-                    refinedPromptContainer.appendChild(sentenceContainer);
                 });
+
+                const sentenceContainer = document.createElement('div');
+                sentenceContainer.className = 'sentence-container';
+                sentenceContainer.appendChild(paragraph);
+                sentenceContainer.appendChild(copyButton);
+
+                refinedPromptContainer.appendChild(sentenceContainer);
             }
         });
 
