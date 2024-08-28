@@ -5,6 +5,8 @@ A web-based tool to create better prompts and supply ideas for additional prompt
 
 **NOTE:** This is a work in progress and your assistance is appreciated. Let's create something great together!
 
+_This tool is a first step in a longer, deeper capability where this refinement will eventually be automatic._
+
 ## Code
 
 Code here: https://github.com/rod-trent/GenAI_Prompt_Refiner/tree/main/Code
