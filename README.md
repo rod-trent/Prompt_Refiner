@@ -5,7 +5,7 @@ A web-based tool to create better prompts and supply ideas for additional prompt
 
 **NOTE:** This is a work in progress and your assistance is appreciated. Let's create something great together!
 
-_This tool is a first step in a longer, deeper capability where this refinement will eventually be automatic._
+_This tool is a first step in a longer, deeper capability where the refinement will be an automatic part of the prompting process._
 
 ## Code
 
